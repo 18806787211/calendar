@@ -1,0 +1,125 @@
+﻿/*初始化*/
+body,div,ul,li,ol,li,dl,dt,dd,h1,h2,h3,h4,span,a,img,input,select,option,i,b,em,strong,p,form,table,tr,td,br,label,textarea{padding:0;margin:0;}
+li{list-style: none;}
+a{text-decoration: none;color: #3e3e3e;}
+img{border:0 none;vertical-align: top;}
+input{outline:none;border: 0 none;}
+textarea{
+    border: 0 none;
+    resize: none;
+}
+.clearfix{*zoom:1;}
+.clearfix:after{content:".";clear:both;visibility: hidden;display: block;height:0;font-size: 0;}
+body{font-family: "微软雅黑";font-size: 14px;color: #000;background: #0099CC;}
+.wh(@w,@h){
+    width:@w;
+    height: @h;
+}
+.bg(@url,@repeat,@x,@y){
+    background:url("../images/@{url}") @repeat @x @y;
+}
+/*@imgSrc:"../images";
+.bg(@url,@repeat,@x,@y){
+    background: url("@{imgSrc}/@{url}") @repeat @x @y;
+}*/
+.bgposition(@left,@top){
+    background-position:@left @top ;
+}
+/*主体*/
+.table{
+    width: 1000px;
+    margin: 100px auto 0;
+    background: #fff;
+    border: 1px solid #B9B9B9;
+    table-layout: fixed;/*采用固定数据项的宽度决定布局*/
+    border-spacing: 0;/*控制表格外间距*/
+    border-collapse: collapse; /* 设置合并边框*/
+}
+.table caption{
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    background: #fff;
+}
+.table tr{
+     min-height: 40px;
+    line-height: 20px;
+}
+.table tr th,
+.table tr td {
+    width:100px;
+    height:40px;
+    border: 1px solid #B9B9B9;
+    text-align: center;
+}
+.table_rul{
+    min-width: 1000px;
+    margin: 10px auto;
+    text-align: center; 
+   color:#fff;
+}
+.addInput{
+     display: block;
+     height: 25px;border-radius: 5px;border: 0 none;text-align: center;width:98px;
+     margin: 0 auto;
+     height:30px;
+}
+.addInput:focus{
+    border: 1px solid #a0d8f1;
+    box-shadow: 0px 0px 2px #0092CE;
+}
+.btn{
+    display: block;
+    width: 60px;
+    height: 30px;
+    background: #0086EB;
+    border: 0 none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 auto;
+    color: #fff;
+    
+}
+.edit,.del{
+    color: #0000FF;
+}
+.table tr .projectName,.table tr .projectName,
+.table tr .prOldName,.table tr .prOldName{
+    width: 200px;
+}
+.projectadd,.prOldadd{
+    width: 198px;
+}
+.addtextara{
+    display: block;
+    width:198px;
+    height: 38px;
+}
+
+.table tr .beizhu,.table td .beizhu{
+    width:200px;
+}
+.table_btnBz{
+    min-width: 1000px;
+    margin: 10px auto;
+    text-align: center;
+}
+.table_btnBz textarea{
+    display: none;
+    width: 600px;
+    height:100px;
+}
+.table_btnBz .btnsave{
+    display: none;
+    width: 60px;
+    height: 30px;
+    background: #0086EB;
+    border: 0 none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 auto;
+    color: #fff;
+}
+.table_btnBz a{
+    color: #0000FF;
+}

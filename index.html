@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/table.css"/>
+		<script src="js/vue.js"></script>
+	</head>
+	<body>
+		<div class="app">
+			<table class="table">
+				<caption>前端资源实时日历（备注：**为长期，空白为暂无）</caption>
+				<thead>
+					<tr><th>前端人员</th><th class="projectName">当前任务</th><th>所需时间</th><th class="prOldName">后续任务</th><th>预估时间</th><th class="beizhu">学习任务</th><th>学习时间</th><th class="beizhu">备注</th><th>操作</th></tr>
+				</thead>
+				<tbody >
+					<template v-for="row in rows ">
+						<tr>
+							<td>{{row.name}}</td>
+							<td class="projectName">{{row.project}}</td>
+							<td>{{row.stardate}}</td>
+							<td class="prOldName">{{row.prOld}}</td>
+							<td>{{row.oldDate}}</td>
+							<td>{{row.study}}</td>
+							<td>{{row.studyDate}}</td>
+							<td class="beizhu">{{row.remarks}}</td>
+							<td>
+								<a class="edit" href="javascript:void(0)" @click="Edit(row)">编辑</a>&nbsp;&nbsp;&nbsp;&nbsp;
+								<a class="del" href="javascript:void(0)" @click="Del(row.id)">删除</a>
+							</td>
+						</tr>
+					</template>
+					<tr>
+						<td><input class="addInput name" type="text" v-model="rowtemplate.name" /></td>
+						<td><textarea class="addtextara" rows="3" v-model="rowtemplate.project"></textarea></td>
+	                    <td><input class="addInput" type="text" v-model="rowtemplate.stardate"/></td>
+	                    <td><textarea class="addtextara" rows="3" v-model="rowtemplate.prOld"></textarea></td>
+	                    <td><input class="addInput" type="text" v-model="rowtemplate.oldDate" /></td>
+	                    <td><textarea class="addtextara" rows="3" v-model="rowtemplate.study"></textarea></td>
+	                    <td><input class="addInput" type="text" v-model="rowtemplate.studyDate" /></td>
+	                    <td><textarea class="addtextara" rows="3" v-model="rowtemplate.remarks"></textarea></td>
+	                    <td><button class="btn" type="button" @click="Save">保存</button></td>	
+					</tr>
+				</tbody>	
+			</table>
+			<p class="table_rul">{{Bzrow}}</p>
+			<div class="table_btnBz">
+				<textarea class="bztext" rows="3" v-model="beizhutemplate.content" placeholder="在此处添加说明"></textarea>
+				<button class="btnsave" type="button" @click="BZsave">保存</button>
+				<a href="javascript:void(0)" @click="BZedit">修改</a>
+			</div>
+		</div>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/js.js"></script>
+	</body>
+</html>
